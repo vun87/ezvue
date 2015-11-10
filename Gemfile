@@ -13,9 +13,12 @@ gem 'haml', '~> 4.0', '>= 4.0.7'
 gem 'simple_form', '~> 3.2'
 gem 'bootstrap-sass', '~> 3.3.5'
 
+gem 'execjs'
+gem 'therubyracer'
 gem 'capistrano', '~> 3.4.0'
-
-
+gem 'capistrano-rbenv', github: "capistrano/rbenv"
+gem 'capistrano-bundler'
+gem 'capistrano-rails'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
