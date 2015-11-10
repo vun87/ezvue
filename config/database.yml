@@ -51,4 +51,4 @@ production:
   <<: *default
   database: ezvue_production
   username: root
-  password: <%= ENV['EZVUE_DATABASE_PASSWORD'] %>
+  password: N3wp0rt!
