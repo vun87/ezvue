@@ -1,12 +1,13 @@
-.h1 Master Client List
-%table.table.table-striped
-	%tr
-		%th Name
-		%th Info
-		%th Address
-	- @client.each do |c|
+.panel.panel-primary
+	.panel-heading Client List
+	%table.table.table-bordered
 		%tr
-			%td= link_to c.name, c
-			%td= c.short_name
-			%td= c.address
+			%th Name
+			%th Info
+			%th Address
+		- @client.each do |c|
+			%tr
+				%td= link_to c.name, c
+				%td= c.short_name
+				%td= c.address
 =link_to 'New Client', new_client_path, class: "btn btn-sm btn-primary"

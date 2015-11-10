@@ -1,0 +1,14 @@
+.panel-body
+	= simple_form_for @intake do |f|
+		.col-md-4
+			= f.input :rcvd_date, as: :string, input_html: {type: :date}
+			= f.input :post_date, as: :string, input_html: {type: :date}
+			= f.input :pgs
+		.col-md-4
+			= f.input :scan_date, as: :string, input_html: {type: :date}
+			= f.input :service_date, as: :string, input_html: {type: :date}
+			= f.input :client_id, :collection => Client.all, include_blank: false
+			= f.input :intaketype_id, :collection => IntakeType.all, include_blank: false
+		.col-md-4
+			= f.input :notes 
+			= f.button :submit

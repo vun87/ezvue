@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151109195235) do
+ActiveRecord::Schema.define(version: 20151110045428) do
 
   create_table "client_types", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -34,5 +34,27 @@ ActiveRecord::Schema.define(version: 20151109195235) do
   end
 
   add_index "clients", ["clienttype_id"], name: "index_clients_on_clienttype_id", using: :btree
+
+  create_table "intake_types", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "intakes", force: :cascade do |t|
+    t.date     "rcvd_date"
+    t.date     "post_date"
+    t.integer  "pgs",           limit: 4
+    t.date     "scan_date"
+    t.text     "notes",         limit: 65535
+    t.date     "service_date"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "client_id",     limit: 4
+    t.integer  "intaketype_id", limit: 4
+  end
+
+  add_index "intakes", ["client_id"], name: "index_intakes_on_client_id", using: :btree
+  add_index "intakes", ["intaketype_id"], name: "index_intakes_on_intaketype_id", using: :btree
 
 end

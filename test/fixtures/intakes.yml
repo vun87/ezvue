@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rcvd_date: 2015-11-09
+  post_date: 2015-11-09
+  pgs: 1
+  scan_date: 2015-11-09
+  notes: MyText
+
+two:
+  rcvd_date: 2015-11-09
+  post_date: 2015-11-09
+  pgs: 1
+  scan_date: 2015-11-09
+  notes: MyText

@@ -1,0 +1,13 @@
+.panel.panel-primary
+	.panel-heading Intake Batch List
+	%table.table.table-bordered
+		%tr
+			%th Name
+			%th Info
+			%th Address
+		- @intake.each do |c|
+			%tr
+				%td= link_to c.id, c
+				%td= c.service_date
+				%td= c.rcvd_date
+=link_to 'New Batch', new_intake_path, class: "btn btn-sm btn-primary"
