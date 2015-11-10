@@ -1,0 +1,13 @@
+= simple_form_for @client do |f|
+	.panel-body
+		.col-md-5
+			= f.input :name, :autofocus => true, class: 'form-control'
+			= f.input :short_name, :label => "Short Name"
+			= f.input :office_contact
+			= f.input :address
+			= f.input :phone
+			= f.input :clienttype_id, :collection => ClientType.all, include_blank: false
+		.row
+			.col-md-6
+				= f.input :notes
+				= f.button :submit

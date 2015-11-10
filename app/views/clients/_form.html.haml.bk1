@@ -1,0 +1,12 @@
+= form_for Client.new do |f|
+	.panel-body
+		.col-md-5
+			Name:
+			=f.text_field :name
+			= f.fields_for :ClientType, ClientType.new do |client_type|
+				Client Type
+				= client_type.collection_select :id, ClientType.all, :id, :name
+		.row
+			.col-md-6
+				= f.text_field :notes
+				= f.submit

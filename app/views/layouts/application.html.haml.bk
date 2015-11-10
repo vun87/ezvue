@@ -1,0 +1,30 @@
+!!!
+%html
+%head
+  %title HiveMind
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+  = javascript_include_tag 'application', 'data-turbolinks-track' => true
+  = csrf_meta_tags
+%body
+  %nav.navbar.navbar-default
+    .container
+      .navbar-brand HiveMind
+      %ul.nav.navbar-nav
+        %li= link_to "Home", root_path
+        %li= link_to "Intake", clients_path
+        %li= link_to "Charges", root_path
+        %li= link_to "Coding", root_path
+        %li= link_to "Payments", root_path
+        %li= link_to "Lists", root_path
+        %li.dropdown
+          %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+          Dropdown
+          %span.caret
+        %ul.dropdown-menu
+        %li TEST
+
+      = link_to "Log Out", root_path, class: "navbar-text navbar-right navbar-link"
+  .container
+  %br
+  %br
+  =yield

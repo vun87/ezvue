@@ -1,0 +1,16 @@
+.main_content
+	.row
+		.col-md-4
+			%h2= @client.name
+			%hr
+			%h5= "Phone: #{@client.phone}"
+			%h5= "Fax: #{@client.fax}"
+			%h5= "Address: #{@client.address}"
+			%h5= "Office Contact: #{@client.office_contact}"
+	.row
+		.col-md-6
+		Notes:
+		= @client.notes
+	.row
+		.col-md-1
+		= link_to 'Edit Client', edit_client_path, class: "btn btn-sm btn-primary"
