@@ -15,9 +15,8 @@ before_action :find_client, only: [:show, :edit, :update, :destroy]
 	end
 
 	def show
-	
 	end
-
+ 
 	def edit
 		@client = Client.find(params[:id])
 	end
@@ -30,22 +29,16 @@ before_action :find_client, only: [:show, :edit, :update, :destroy]
 		end
 	end
 
-
 	def destroy
 	end
 
-
-
 private
 
-def client_params
-	params.require(:client).permit!
-end
+	def client_params
+		params.require(:client).permit!
+	end
 
-def find_client
-	@client = Client.find(params[:id])
-end
-
-
-
+	def find_client
+		@client = Client.find(params[:id])
+	end
 end

@@ -50,5 +50,5 @@ test:
 production:
   <<: *default
   database: ezvue_production
-  username: ezvue
+  username: root
   password: <%= ENV['EZVUE_DATABASE_PASSWORD'] %>
